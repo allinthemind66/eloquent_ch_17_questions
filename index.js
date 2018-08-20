@@ -38,14 +38,14 @@
 function drawSpiral(){
   let cx = document.querySelector("canvas").getContext("2d");
   cx.beginPath();
-  let centerX = 50, centerY = 50, radius = 50;
-  cx.beginPath();
-  cx.moveTo(centerX+radius, centerY+radius)
-  for(let i = 0; i < 20; i++){
-    cx.lineTo()
+  let angle = Math.PI / 2;
+  let radius = 10;
+  for(let i = 0; i < 300; i++){
+    angle += -16 * .01;
+    radius += .3
+    cx.lineTo(100 + Math.cos(angle) * radius, 100 + Math.sin(angle) * radius)
   }
-  // cx.arc(50, 50, 40, 0, 7);
-  // cx.stroke();
+  cx.stroke();
 };
 
 drawSpiral()
